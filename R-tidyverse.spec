@@ -4,44 +4,61 @@
 #
 Name     : R-tidyverse
 Version  : 1.2.1
-Release  : 13
+Release  : 14
 URL      : https://cran.r-project.org/src/contrib/tidyverse_1.2.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/tidyverse_1.2.1.tar.gz
 Summary  : Easily Install and Load the 'Tidyverse'
 Group    : Development/Tools
 License  : GPL-3.0
 Requires: R-broom
+Requires: R-cli
 Requires: R-dbplyr
 Requires: R-forcats
+Requires: R-generics
+Requires: R-ggplot2
+Requires: R-gtable
 Requires: R-haven
+Requires: R-jsonlite
+Requires: R-lazyeval
 Requires: R-lubridate
 Requires: R-modelr
+Requires: R-munsell
+Requires: R-plyr
 Requires: R-readr
 Requires: R-readxl
 Requires: R-reprex
 Requires: R-rstudioapi
 Requires: R-rvest
+Requires: R-scales
 Requires: R-tidyr
 Requires: R-xml2
 BuildRequires : R-broom
+BuildRequires : R-cli
 BuildRequires : R-dbplyr
 BuildRequires : R-forcats
+BuildRequires : R-generics
+BuildRequires : R-ggplot2
+BuildRequires : R-gtable
 BuildRequires : R-haven
+BuildRequires : R-jsonlite
+BuildRequires : R-lazyeval
 BuildRequires : R-lubridate
 BuildRequires : R-modelr
+BuildRequires : R-munsell
+BuildRequires : R-plyr
 BuildRequires : R-readr
 BuildRequires : R-readxl
 BuildRequires : R-reprex
 BuildRequires : R-rstudioapi
 BuildRequires : R-rvest
+BuildRequires : R-scales
 BuildRequires : R-tidyr
 BuildRequires : R-xml2
-BuildRequires : clr-R-helpers
+BuildRequires : buildreq-R
 
 %description
-because they share common data representations and 'API' design. This
-    package is designed to make it easy to install and load multiple
-    'tidyverse' packages in a single step. Learn more about the 'tidyverse'
+tidyverse <img src="man/figures/logo.png" align="right" />
+==========================================================
 
 %prep
 %setup -q -c -n tidyverse
@@ -51,11 +68,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1521269074
+export SOURCE_DATE_EPOCH=1552844375
 
 %install
+export SOURCE_DATE_EPOCH=1552844375
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1521269074
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -90,8 +107,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library tidyverse|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  tidyverse || :
 
 
 %files
