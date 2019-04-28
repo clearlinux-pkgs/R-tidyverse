@@ -4,48 +4,35 @@
 #
 Name     : R-tidyverse
 Version  : 1.2.1
-Release  : 18
+Release  : 19
 URL      : https://cran.r-project.org/src/contrib/tidyverse_1.2.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/tidyverse_1.2.1.tar.gz
 Summary  : Easily Install and Load the 'Tidyverse'
 Group    : Development/Tools
 License  : GPL-3.0
-Requires: R-broom
-Requires: R-cli
-Requires: R-dbplyr
-Requires: R-forcats
-Requires: R-generics
-Requires: R-ggplot2
-Requires: R-gtable
-Requires: R-haven
-Requires: R-jsonlite
-Requires: R-lazyeval
-Requires: R-lubridate
-Requires: R-modelr
-Requires: R-munsell
-Requires: R-plyr
-Requires: R-readr
-Requires: R-readxl
-Requires: R-reprex
-Requires: R-rstudioapi
-Requires: R-rvest
-Requires: R-scales
-Requires: R-tidyr
-Requires: R-xml2
+Requires: R-backports
+Requires: R-dplyr
+Requires: R-hms
+Requires: R-purrr
+Requires: R-tidyselect
+BuildRequires : R-backports
 BuildRequires : R-broom
 BuildRequires : R-cli
 BuildRequires : R-dbplyr
+BuildRequires : R-dplyr
 BuildRequires : R-forcats
 BuildRequires : R-generics
 BuildRequires : R-ggplot2
 BuildRequires : R-gtable
 BuildRequires : R-haven
+BuildRequires : R-hms
 BuildRequires : R-jsonlite
 BuildRequires : R-lazyeval
 BuildRequires : R-lubridate
 BuildRequires : R-modelr
 BuildRequires : R-munsell
 BuildRequires : R-plyr
+BuildRequires : R-purrr
 BuildRequires : R-readr
 BuildRequires : R-readxl
 BuildRequires : R-reprex
@@ -53,6 +40,7 @@ BuildRequires : R-rstudioapi
 BuildRequires : R-rvest
 BuildRequires : R-scales
 BuildRequires : R-tidyr
+BuildRequires : R-tidyselect
 BuildRequires : R-xml2
 BuildRequires : buildreq-R
 
@@ -68,10 +56,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1552844375
+export SOURCE_DATE_EPOCH=1556481947
 
 %install
-export SOURCE_DATE_EPOCH=1552844375
+export SOURCE_DATE_EPOCH=1556481947
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -107,7 +95,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc  tidyverse || :
+R CMD check --no-manual --no-examples --no-codoc tidyverse || :
 
 
 %files
