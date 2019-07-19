@@ -4,44 +4,68 @@
 #
 Name     : R-tidyverse
 Version  : 1.2.1
-Release  : 22
+Release  : 23
 URL      : https://cran.r-project.org/src/contrib/tidyverse_1.2.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/tidyverse_1.2.1.tar.gz
 Summary  : Easily Install and Load the 'Tidyverse'
 Group    : Development/Tools
 License  : GPL-3.0
-BuildRequires : R-backports
+Requires: R-broom
+Requires: R-cli
+Requires: R-crayon
+Requires: R-dbplyr
+Requires: R-dplyr
+Requires: R-forcats
+Requires: R-ggplot2
+Requires: R-haven
+Requires: R-hms
+Requires: R-httr
+Requires: R-jsonlite
+Requires: R-lubridate
+Requires: R-magrittr
+Requires: R-modelr
+Requires: R-purrr
+Requires: R-readr
+Requires: R-readxl
+Requires: R-reprex
+Requires: R-rlang
+Requires: R-rstudioapi
+Requires: R-rvest
+Requires: R-stringr
+Requires: R-tibble
+Requires: R-tidyr
+Requires: R-xml2
 BuildRequires : R-broom
 BuildRequires : R-cli
+BuildRequires : R-crayon
 BuildRequires : R-dbplyr
 BuildRequires : R-dplyr
 BuildRequires : R-forcats
-BuildRequires : R-generics
 BuildRequires : R-ggplot2
-BuildRequires : R-gtable
 BuildRequires : R-haven
 BuildRequires : R-hms
+BuildRequires : R-httr
 BuildRequires : R-jsonlite
-BuildRequires : R-lazyeval
 BuildRequires : R-lubridate
+BuildRequires : R-magrittr
 BuildRequires : R-modelr
-BuildRequires : R-munsell
-BuildRequires : R-plyr
 BuildRequires : R-purrr
 BuildRequires : R-readr
 BuildRequires : R-readxl
 BuildRequires : R-reprex
+BuildRequires : R-rlang
 BuildRequires : R-rstudioapi
 BuildRequires : R-rvest
-BuildRequires : R-scales
+BuildRequires : R-stringr
+BuildRequires : R-tibble
 BuildRequires : R-tidyr
-BuildRequires : R-tidyselect
 BuildRequires : R-xml2
 BuildRequires : buildreq-R
 
 %description
-tidyverse <img src="man/figures/logo.png" align="right" />
-==========================================================
+because they share common data representations and 'API' design. This
+    package is designed to make it easy to install and load multiple
+    'tidyverse' packages in a single step. Learn more about the 'tidyverse'
 
 %prep
 %setup -q -c -n tidyverse
@@ -50,13 +74,13 @@ tidyverse <img src="man/figures/logo.png" align="right" />
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1556483852
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1563519521
 
 %install
-export SOURCE_DATE_EPOCH=1556483852
+export SOURCE_DATE_EPOCH=1563519521
 rm -rf %{buildroot}
-export LANG=C
+export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -85,7 +109,7 @@ R CMD INSTALL --preclean --install-tests --built-timestamp=${SOURCE_DATE_EPOCH} 
 cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 %{__rm} -rf %{buildroot}%{_datadir}/R/library/R.css
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
