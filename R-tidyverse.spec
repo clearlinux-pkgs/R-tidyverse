@@ -4,7 +4,7 @@
 #
 Name     : R-tidyverse
 Version  : 1.3.0
-Release  : 26
+Release  : 27
 URL      : https://cran.r-project.org/src/contrib/tidyverse_1.3.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/tidyverse_1.3.0.tar.gz
 Summary  : Easily Install and Load the 'Tidyverse'
@@ -71,21 +71,22 @@ harmony because they share common data representations and 'API'
 
 %prep
 %setup -q -c -n tidyverse
+cd %{_builddir}/tidyverse
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1574318766
+export SOURCE_DATE_EPOCH=1589789100
 
 %install
-export SOURCE_DATE_EPOCH=1574318766
+export SOURCE_DATE_EPOCH=1589789100
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
