@@ -4,7 +4,7 @@
 #
 Name     : R-tidyverse
 Version  : 1.3.1
-Release  : 33
+Release  : 34
 URL      : https://cran.r-project.org/src/contrib/tidyverse_1.3.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/tidyverse_1.3.1.tar.gz
 Summary  : Easily Install and Load the 'Tidyverse'
@@ -18,6 +18,8 @@ Requires: R-dplyr
 Requires: R-dtplyr
 Requires: R-forcats
 Requires: R-ggplot2
+Requires: R-googledrive
+Requires: R-googlesheets4
 Requires: R-haven
 Requires: R-hms
 Requires: R-httr
@@ -82,10 +84,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1620314945
+export SOURCE_DATE_EPOCH=1620321692
 
 %install
-export SOURCE_DATE_EPOCH=1620314945
+export SOURCE_DATE_EPOCH=1620321692
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
