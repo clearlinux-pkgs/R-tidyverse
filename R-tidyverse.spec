@@ -4,7 +4,7 @@
 #
 Name     : R-tidyverse
 Version  : 2.0.0
-Release  : 49
+Release  : 50
 URL      : https://cran.r-project.org/src/contrib/tidyverse_2.0.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/tidyverse_2.0.0.tar.gz
 Summary  : Easily Install and Load the 'Tidyverse'
@@ -72,9 +72,6 @@ BuildRequires : R-tibble
 BuildRequires : R-tidyr
 BuildRequires : R-xml2
 BuildRequires : buildreq-R
-# Suppress stripping binaries
-%define __strip /bin/true
-%define debug_package %{nil}
 
 %description
 because they share common data representations and 'API' design. This
@@ -90,10 +87,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1677085623
+export SOURCE_DATE_EPOCH=1678828391
 
 %install
-export SOURCE_DATE_EPOCH=1677085623
+export SOURCE_DATE_EPOCH=1678828391
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
