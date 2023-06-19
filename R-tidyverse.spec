@@ -4,7 +4,7 @@
 #
 Name     : R-tidyverse
 Version  : 2.0.0
-Release  : 52
+Release  : 53
 URL      : https://cran.r-project.org/src/contrib/tidyverse_2.0.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/tidyverse_2.0.0.tar.gz
 Summary  : Easily Install and Load the 'Tidyverse'
